@@ -19,4 +19,12 @@ public class BulletScript : MonoBehaviour
         rb.velocity = new Vector2(velX, velY);
         Destroy(gameObject, 1.5f);
     }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.name != "Ship")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

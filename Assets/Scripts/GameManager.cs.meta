@@ -3,7 +3,15 @@ guid: 3df50e4fee646544683c5c7ad9503778
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - UFO: {fileID: 8942645973198601235, guid: 7999c5913d840794ab6fe83398ec0994, type: 3}
+  - blue: {fileID: 8729999477051985973, guid: 67d07d47a6c3c3e4798229293b8b054c, type: 3}
+  - green: {fileID: 247265466353510286, guid: d5449e6c3988c0648940977ea37520fa, type: 3}
+  - pink: {fileID: 5780090570749679642, guid: afb027263760c634893908e72f0f4b49, type: 3}
+  - orange: {fileID: 2433549856080762660, guid: 8648525bac90064428dd62c34fbc91ba,
+      type: 3}
+  - yellow: {fileID: 5796421492248326936, guid: c9c6af52f5543c740a2fefbe6bf25095,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
