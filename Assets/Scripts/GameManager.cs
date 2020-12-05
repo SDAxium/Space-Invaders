@@ -29,6 +29,30 @@ public class GameManager : MonoBehaviour
             }
             xCord += 3;
         }
+
+        xCord = -17;
+        List<GameObject> oranges = new List<GameObject>();
+        for(int i = 0; i < 10; i++){
+            oranges.Add(Instantiate(orange, new Vector3(xCord,5,0), Quaternion.identity));
+            
+            if(i > 0)
+            {
+                oranges[i-1].gameObject.transform.parent = oranges[i-1].gameObject.transform;
+            }
+            xCord += 3;
+        }
+
+        xCord = -17;
+        List<GameObject> pinks = new List<GameObject>();
+        for(int i = 0; i < 10; i++){
+            pinks.Add(Instantiate(pink, new Vector3(xCord,3,0), Quaternion.identity));
+            
+            if(i > 0)
+            {
+                pinks[i-1].gameObject.transform.parent = pinks[i-1].gameObject.transform;
+            }
+            xCord += 3;
+        }
     }
 
     // Update is called once per frame
@@ -36,5 +60,4 @@ public class GameManager : MonoBehaviour
     {
         
     }
-
 }

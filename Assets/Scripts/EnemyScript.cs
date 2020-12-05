@@ -6,21 +6,21 @@ public class EnemyScript : MonoBehaviour
 {
     public Transform myTransform;
     public int health;
-    private bool increasing;
+    public bool increasing;
     private int min;
     private int max;
     private float x;
     private float y;
     private float z;
     public float speed;
+    GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
+        gm = GetComponent<GameManager>();
         x = transform.position.x;
         y = transform.position.y;
         z = transform.position.z;
-        increasing = true;
-
         myTransform.position = new Vector3(x,y,z);
     }
 
@@ -41,10 +41,20 @@ public class EnemyScript : MonoBehaviour
     {
         if(col.gameObject.tag == "Bullet")
         {
-            health -= 20;
+            health -= 50;
             if(health <= 0)
             {
                 Destroy(gameObject);
+                // for(int i = 0; i < gm.enemies.Count; i++)
+                // {
+                //     for(int j = 0; j < gm.enemies[i].Count; i++)
+                //     {
+                //         if(gm.enemies[i][j].gameObject.name == this.name)
+                //         {
+                //             Debug.Log(name);
+                //         }
+                //     }
+                // }
             }
         }
         
@@ -54,8 +64,21 @@ public class EnemyScript : MonoBehaviour
             {
                 increasing = false;
             }
-            else { increasing = true;}
-            myTransform.position += new Vector3(0,(float)-2,0);
+            else 
+            { 
+                increasing = true;
+            }
+            float x = 0;
+            while( x < 2f)
+            {
+                myTransform.position += new Vector3(0,(float)-.01f,0);
+                x += .01f;
+            }
+        }
+
+        if(col.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
         }
     }
 }

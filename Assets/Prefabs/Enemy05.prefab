@@ -144,5 +144,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myTransform: {fileID: 5796421492248326932}
-  health: 300
-  speed: 3
+  health: 250
+  increasing: 1
+  speed: 2

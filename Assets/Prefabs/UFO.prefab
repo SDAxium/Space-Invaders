@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8942645973198601239}
   - component: {fileID: 6413296291268886561}
-  - component: {fileID: 9042589634479876952}
   - component: {fileID: 4163510081013622221}
   - component: {fileID: 8942645973198601234}
+  - component: {fileID: -2563203706629491509}
   m_Layer: 0
   m_Name: UFO
   m_TagString: Untagged
@@ -84,21 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9042589634479876952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8942645973198601235}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49dcc21445a251241a062696f7da946e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myTransform: {fileID: 8942645973198601239}
-  health: 2500
-  speed: 2
 --- !u!61 &4163510081013622221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,3 +131,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
+--- !u!114 &-2563203706629491509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8942645973198601235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1a44d63e0df27478d7396b0a28326b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myTransform: {fileID: 8942645973198601239}
+  health: 3000
+  speed: 1
+  bullet: {fileID: 4473620668213321132, guid: b160fb2134218cf4997fd448616bb4df, type: 3}

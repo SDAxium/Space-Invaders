@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 {
     public Transform myTransform;
-     public GameObject bullet;
+    public GameObject bullet;
     Vector2 bulletPos;
+    public int health = 400;
     float fireRate = 0.1f;
     float nextShot = 0.0f;
     float speed;
@@ -35,6 +36,26 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if(col.gameObject.tag == "Bullet")
+        {
+            health -= 30;
+            if(health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        if(col.gameObject.tag == "Enemy")
+        {
+            health -= 50;
+            if(health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
+    }
     void fire()
     {
         bulletPos = myTransform.position;
