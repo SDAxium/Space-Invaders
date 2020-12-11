@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    public GameObject score;
     public Color OGcolor;
     public Color damageColor;
     public GameObject bullet;
@@ -22,14 +21,17 @@ public class EnemyScript : MonoBehaviour
     float nextShot = 0.0f;
     public int value;
     
+    
+    
     // Start is called before the first frame update
     void Start()
     {
+       
         x = transform.position.x;
         y = transform.position.y;
         z = transform.position.z;
         myTransform.position = new Vector3(x,y,z);
-        gameObject.GetComponent<SpriteRenderer>().color = OGcolor;
+        gameObject.GetComponent<SpriteRenderer>().color = OGcolor; 
     }
 
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class EnemyScript : MonoBehaviour
         
         if(playerCheck)
         {
-            if(transform.position.y < -4)
+            if(transform.position.y < 0)
             {
                 if(Time.time > nextShot)
                 {
@@ -51,7 +53,6 @@ public class EnemyScript : MonoBehaviour
             
                             
         }
-        
         
        if(increasing)
         {
@@ -68,11 +69,14 @@ public class EnemyScript : MonoBehaviour
         if(col.gameObject.tag == "Bullet")
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
-            Invoke("ResetColor", 0.05f);
+            Invoke("ResetColor", 0.3f);
           
             health -= 50;
             if(health <= 0)
             {
+                GameObject SK = GameObject.Find("ScoreKeeper");
+                ScoreScript score = SK.GetComponent<ScoreScript>();
+                score.AddScore(value);
                 Destroy(gameObject);
             }
         }
@@ -103,7 +107,11 @@ public class EnemyScript : MonoBehaviour
 
     void shoot()
     {
-        float bpY = myTransform.position.y - (float)1;
+        float bpY = myTransform.position.y - (float).5;
+        if(gameObject.name.Contains("Yellow"))
+        {
+            bpY = myTransform.position.y - (float)1.25;
+        }
         float bpX = myTransform.position.x;
         bulletPos = new Vector2(bpX,bpY);
         Instantiate(bullet, bulletPos, Quaternion.identity);

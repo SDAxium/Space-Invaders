@@ -99,6 +99,7 @@ MonoBehaviour:
   myTransform: {fileID: 2094945086484949341}
   bullet: {fileID: 4473620668213321132, guid: b160fb2134218cf4997fd448616bb4df, type: 3}
   health: 400
+  fireRate: 0.25
 --- !u!61 &2913884750252858104
 BoxCollider2D:
   m_ObjectHideFlags: 0

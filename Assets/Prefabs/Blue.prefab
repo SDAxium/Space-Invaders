@@ -143,7 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49dcc21445a251241a062696f7da946e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: {fileID: 3377818489870129893, guid: e97c244db0f0fa942915cb1e4945cee5, type: 3}
   OGcolor: {r: 0, g: 0.049346913, b: 0.6415094, a: 1}
   damageColor: {r: 0.9433962, g: 0.031149892, b: 0.031149892, a: 0}
   bullet: {fileID: 4473620668213321132, guid: 5dd7a99f638f00844aff6d37af6cf9e0, type: 3}
@@ -152,3 +151,5 @@ MonoBehaviour:
   increasing: 1
   speed: 1
   fireRate: 2
+  value: 10
+  SK: {fileID: 1537278636693131943, guid: edd70ef576831e94581cb24c76ab2d28, type: 3}

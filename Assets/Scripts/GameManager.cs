@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
 
         xCord = -17;
         List<GameObject> greens = new List<GameObject>();
-        for(int i = 0; i < 9; i++){
+        for(int i = 0; i < 12; i++){
             greens.Add(Instantiate(green, new Vector3(xCord,1,0), Quaternion.identity));
             xCord += 3;
         }

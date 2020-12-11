@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class PlayerScript : MonoBehaviour
     public GameObject bullet;
     Vector2 bulletPos;
     public int health = 400;
-    float fireRate = 0.3f;
+    public float fireRate = 0.3f;
     static float nextShot = 0.0f;
     float speed;
     void Start()
@@ -38,7 +39,7 @@ public class PlayerScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.tag == "Bullet")
+        if(col.gameObject.tag == "EnemyBullet")
         {
             health -= 30;
         }
@@ -50,7 +51,9 @@ public class PlayerScript : MonoBehaviour
         
         if(health <= 0)
         {
+
             Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     void fire()

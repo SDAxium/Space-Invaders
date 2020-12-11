@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 0
     width: 201
     height: 731
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -72,10 +72,10 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 731
-  m_MinSize: {x: 707, y: 492}
-  m_MaxSize: {x: 18002, y: 14042}
+  m_MinSize: {x: 708, y: 492}
+  m_MaxSize: {x: 18003, y: 14042}
   vertical: 0
-  controlID: 34
+  controlID: 121
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -220,7 +220,7 @@ MonoBehaviour:
   m_MinSize: {x: 232, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 35
+  controlID: 53
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -287,11 +287,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Users\Mamadou Diallo\Desktop\City Tech\Game Design and Interactive
     Media\Repositories\Space-Invaders
@@ -299,9 +299,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 120}
-    m_SelectedIDs: 78340000
-    m_LastClickedID: 13432
-    m_ExpandedIDs: 0000000066340000683400006a3400007c34000000ca9a3b
+    m_SelectedIDs: 8a340000
+    m_LastClickedID: 13450
+    m_ExpandedIDs: 00000000783400007a3400007c34000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -329,7 +329,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000066340000683400006a340000
+    m_ExpandedIDs: 00000000783400007a3400007c340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -454,7 +454,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6cfbffff
+      m_ExpandedIDs: de34fdff4a82fdff5282fdff5a82fdffc283fdffa697fdffbe99fdff789bfdff8aabfdffc0acfdff08adfdff12adfdff18aefdff58b1fdff7ab1fdffdcb1fdff50b2fdff80b2fdffd8b2fdffe0b2fdff8ac7fdffeacafdff42cffdff2cd7fdffe2ddfdfffce1fdff68e5fdff0ae6fdff18e6fdff28e6fdff38e6fdff8ae6fdff98e6fdffbce6fdff56eefdff5cf0fdff58f3fdffc6f5fdfff2f5fdfffaf5fdfff2dbffff6cfbfffff4ffffff765100005e5400008055000086550000f056000060570000cc590000325a0000385a00001a5b0000945b00009a5b0000705c0000ae5c00000a5e0000e05e0000e65e0000c4630000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -514,9 +514,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.778513, y: 2.8170147, z: -131.35553}
+    m_Target: {x: 2.3288877, y: 3.3184938, z: 96.06146}
     speed: 2
-    m_Value: {x: 3.778513, y: 2.8170147, z: -131.35553}
+    m_Value: {x: 2.3288877, y: 3.3184938, z: 96.06146}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -566,9 +566,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 16.727476
+    m_Target: 11.590412
     speed: 2
-    m_Value: 16.727476
+    m_Value: 12.136558
   m_Ortho:
     m_Target: 1
     speed: 2

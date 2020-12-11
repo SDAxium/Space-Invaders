@@ -50,7 +50,7 @@ public class UFO_Script : MonoBehaviour
             if(health <= 0)
             {
                 Destroy(gameObject);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
             }
         }
         

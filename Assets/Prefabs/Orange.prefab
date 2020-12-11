@@ -104,6 +104,8 @@ MonoBehaviour:
   increasing: 0
   speed: 1
   fireRate: 1
+  value: 40
+  SK: {fileID: 1537278636693131943, guid: edd70ef576831e94581cb24c76ab2d28, type: 3}
 --- !u!61 &2433549856080762663
 BoxCollider2D:
   m_ObjectHideFlags: 0

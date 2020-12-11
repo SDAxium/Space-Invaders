@@ -14,6 +14,8 @@ MonoImporter:
       type: 3}
   - yellow: {fileID: 5796421492248326936, guid: c9c6af52f5543c740a2fefbe6bf25095,
       type: 3}
+  - ScoreKeeper: {fileID: 1537278636693131943, guid: edd70ef576831e94581cb24c76ab2d28,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
