@@ -4,6 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - Player: {fileID: 2094945086484949343, guid: 67d79fb0094c7f54db7ce264a27ab26b,
+      type: 3}
   - UFO: {fileID: 8942645973198601235, guid: 7999c5913d840794ab6fe83398ec0994, type: 3}
   - blue: {fileID: 8729999477051985973, guid: 67d07d47a6c3c3e4798229293b8b054c, type: 3}
   - green: {fileID: 247265466353510286, guid: d5449e6c3988c0648940977ea37520fa, type: 3}

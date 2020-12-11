@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
-    public float velY = 20;
-    float velX = 0f;
+    public float velY;
     Rigidbody2D rb; 
     // Start is called before the first frame update
     void Start()
@@ -16,15 +15,17 @@ public class BulletScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = new Vector2(velX, velY);
+        RaycastHit2D enemyCheck = Physics2D.Raycast(transform.position, Vector2.down, 15f, LayerMask.GetMask("Enemy"));
+        if(enemyCheck)
+        {
+            Destroy(gameObject);
+        }
+        rb.velocity = new Vector2(0, velY);
         Destroy(gameObject, 1.5f);
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if(col.gameObject.name != "Ship")
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

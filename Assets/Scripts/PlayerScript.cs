@@ -8,8 +8,8 @@ public class PlayerScript : MonoBehaviour
     public GameObject bullet;
     Vector2 bulletPos;
     public int health = 400;
-    float fireRate = 0.1f;
-    float nextShot = 0.0f;
+    float fireRate = 0.3f;
+    static float nextShot = 0.0f;
     float speed;
     void Start()
     {
@@ -22,14 +22,14 @@ public class PlayerScript : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            myTransform.position += new Vector3(speed*-1,0,0);
+            myTransform.position += new Vector3(speed*-1f,0,0);
         }
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            myTransform.position += new Vector3(speed,0,0);
+            myTransform.position += new Vector3(speed* 1f,0,0);
         }
 
-        if((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && Time.time > nextShot)
+        if((Input.GetKey(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && Time.time > nextShot)
         {
             nextShot =  Time.time + fireRate;
             fire();
@@ -41,24 +41,23 @@ public class PlayerScript : MonoBehaviour
         if(col.gameObject.tag == "Bullet")
         {
             health -= 30;
-            if(health <= 0)
-            {
-                Destroy(gameObject);
-            }
         }
 
         if(col.gameObject.tag == "Enemy")
         {
             health -= 50;
-            if(health <= 0)
-            {
-                Destroy(gameObject);
-            }
+        }
+        
+        if(health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
     void fire()
     {
-        bulletPos = myTransform.position;
+        float bpY = myTransform.position.y + (float)1.5;
+        float bpX = myTransform.position.x;
+        bulletPos = new Vector2(bpX,bpY);
         Instantiate(bullet, bulletPos, Quaternion.identity);
     }
 }

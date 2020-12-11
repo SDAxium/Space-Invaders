@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
+    public GameObject score;
+    public Color OGcolor;
+    public Color damageColor;
+    public GameObject bullet;
+    Vector2 bulletPos;
     public Transform myTransform;
     public int health;
     public bool increasing;
@@ -13,20 +18,41 @@ public class EnemyScript : MonoBehaviour
     private float y;
     private float z;
     public float speed;
-    GameManager gm;
+    public float fireRate = 2.0f;
+    float nextShot = 0.0f;
+    public int value;
+    
     // Start is called before the first frame update
     void Start()
     {
-        gm = GetComponent<GameManager>();
         x = transform.position.x;
         y = transform.position.y;
         z = transform.position.z;
         myTransform.position = new Vector3(x,y,z);
+        gameObject.GetComponent<SpriteRenderer>().color = OGcolor;
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        RaycastHit2D playerCheck = Physics2D.Raycast(transform.position, Vector2.down, 15f, LayerMask.GetMask("Player"));
+        RaycastHit2D enemyCheck = Physics2D.Raycast(transform.position, Vector2.down, 15f, LayerMask.GetMask("Enemy"));
+        
+        if(playerCheck)
+        {
+            if(transform.position.y < -4)
+            {
+                if(Time.time > nextShot)
+                {
+                    nextShot = Time.time + fireRate;
+                    shoot();
+                }
+            }
+            
+                            
+        }
+        
+        
        if(increasing)
         {
             myTransform.position += new Vector3(0.01f,0,0) * speed;
@@ -41,20 +67,13 @@ public class EnemyScript : MonoBehaviour
     {
         if(col.gameObject.tag == "Bullet")
         {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            Invoke("ResetColor", 0.05f);
+          
             health -= 50;
             if(health <= 0)
             {
                 Destroy(gameObject);
-                // for(int i = 0; i < gm.enemies.Count; i++)
-                // {
-                //     for(int j = 0; j < gm.enemies[i].Count; i++)
-                //     {
-                //         if(gm.enemies[i][j].gameObject.name == this.name)
-                //         {
-                //             Debug.Log(name);
-                //         }
-                //     }
-                // }
             }
         }
         
@@ -68,11 +87,11 @@ public class EnemyScript : MonoBehaviour
             { 
                 increasing = true;
             }
-            float x = 0;
-            while( x < 2f)
+            float y = 0;
+            while( y < 2f)
             {
                 myTransform.position += new Vector3(0,(float)-.01f,0);
-                x += .01f;
+                y += .01f;
             }
         }
 
@@ -80,5 +99,18 @@ public class EnemyScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void shoot()
+    {
+        float bpY = myTransform.position.y - (float)1;
+        float bpX = myTransform.position.x;
+        bulletPos = new Vector2(bpX,bpY);
+        Instantiate(bullet, bulletPos, Quaternion.identity);
+    }
+
+    void ResetColor()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = OGcolor;
     }
 }
