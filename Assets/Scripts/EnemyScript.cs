@@ -20,6 +20,7 @@ public class EnemyScript : MonoBehaviour
     public float fireRate = 2.0f;
     float nextShot = 0.0f;
     public int value;
+    public bool canShoot;
     
     
     
@@ -37,22 +38,31 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   
-        RaycastHit2D playerCheck = Physics2D.Raycast(transform.position, Vector2.down, 15f, LayerMask.GetMask("Player"));
-        RaycastHit2D enemyCheck = Physics2D.Raycast(transform.position, Vector2.down, 15f, LayerMask.GetMask("Enemy"));
-        
-        if(playerCheck)
+        if(transform.position.y < -10)
         {
-            if(transform.position.y < 0)
-            {
-                if(Time.time > nextShot)
-                {
-                    nextShot = Time.time + fireRate;
-                    shoot();
-                }
-            }
-            
-                            
+            Destroy(gameObject);
         }
+        if(canShoot)
+        {
+            RaycastHit2D playerCheck = Physics2D.Raycast(transform.position, Vector2.down, 30f, LayerMask.GetMask("Player"));
+
+            RaycastHit2D enemyCheck = Physics2D.Raycast(transform.position + Vector3.down, Vector2.down, 15f, LayerMask.GetMask("Enemy"));
+            RaycastHit2D enemyCheck1 = Physics2D.Raycast(transform.position + Vector3.left, Vector2.down, 15f, LayerMask.GetMask("Enemy"));
+            RaycastHit2D enemyCheck2 = Physics2D.Raycast(transform.position + Vector3.right, Vector2.down, 15f, LayerMask.GetMask("Enemy"));
+        
+            if(playerCheck)
+            {
+                if(!enemyCheck && !enemyCheck1 && !enemyCheck2)
+                {
+                    if(Time.time > nextShot)
+                    {
+                        nextShot = Time.time + fireRate;
+                        shoot();
+                    }
+                }               
+            }
+        }
+
         
        if(increasing)
         {

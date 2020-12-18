@@ -21,43 +21,41 @@ public class GameManager : MonoBehaviour
         xCord = -17;
         enemies.Add(new List<GameObject>{Instantiate(UFO, new Vector3(0, (float)9.5,0), Quaternion.identity)});
 
-        List<GameObject> yellows = new List<GameObject>();
-        for(int i = 0; i < 9; i++){
-            yellows.Add(Instantiate(yellow, new Vector3(xCord,7,0), Quaternion.identity));
+        // List<GameObject> yellows = new List<GameObject>();
+        // for(int i = 0; i < 9; i++){
+        //     yellows.Add(Instantiate(yellow, new Vector3(xCord,7,0), Quaternion.identity));
             
-            if(i > 0)
+        //     if(i > 0)
             
-            xCord += 3;
-        }
-        enemies.Add(yellows);
+        //     xCord += 3;
+        // }
+        // enemies.Add(yellows);
 
-        xCord = -17;
-        List<GameObject> pinks = new List<GameObject>();
-        for(int i = 0; i < 9; i++){
-            pinks.Add(Instantiate(pink, new Vector3(xCord,3,0), Quaternion.identity));
+        // xCord = -17;
+        // List<GameObject> pinks = new List<GameObject>();
+        // for(int i = 0; i < 9; i++){
+        //     pinks.Add(Instantiate(pink, new Vector3(xCord,3,0), Quaternion.identity));
         
-            xCord += 3;
-        }
-        enemies.Add(pinks);
+        //     xCord += 3;
+        // }
+        // enemies.Add(pinks);
 
-        xCord = -17;
-        List<GameObject> oranges = new List<GameObject>();
-        for(int i = 0; i < 9; i++){
-            oranges.Add(Instantiate(orange, new Vector3(xCord,5,0), Quaternion.identity));
+        // xCord = -17;
+        // List<GameObject> oranges = new List<GameObject>();
+        // for(int i = 0; i < 9; i++){
+        //     oranges.Add(Instantiate(orange, new Vector3(xCord,5,0), Quaternion.identity));
             
-            xCord += 3;
-        }
-        enemies.Add(oranges);
+        //     xCord += 3;
+        // }
+        // enemies.Add(oranges);
 
-        xCord = -17;
-        List<GameObject> greens = new List<GameObject>();
-        for(int i = 0; i < 12; i++){
-            greens.Add(Instantiate(green, new Vector3(xCord,1,0), Quaternion.identity));
-            xCord += 3;
-        }
-        enemies.Add(greens);
-
-        enemies.ToString();
+        // xCord = -17;
+        // List<GameObject> greens = new List<GameObject>();
+        // for(int i = 0; i < 12; i++){
+        //     greens.Add(Instantiate(green, new Vector3(xCord,1,0), Quaternion.identity));
+        //     xCord += 3;
+        // }
+        // enemies.Add(greens);
     }
 
     // Update is called once per frame

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
+    bool fullmovement = false;
+    public Color OGcolor;
     public Transform myTransform;
     public GameObject bullet;
     Vector2 bulletPos;
@@ -15,7 +17,8 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         speed = 0.05f;
-        myTransform.position = new Vector2(0, (float)-9.75);   
+        myTransform.position = new Vector2(0, (float)-9.75);  
+        gameObject.GetComponent<SpriteRenderer>().color = OGcolor;  
     }
 
     // Update is called once per frame
@@ -23,14 +26,33 @@ public class PlayerScript : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            myTransform.position += new Vector3(speed*-1f,0,0);
+            if(myTransform.position.x >= -18)
+            {
+                myTransform.position += new Vector3(speed*-1f,0,0);
+            }
         }
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            myTransform.position += new Vector3(speed* 1f,0,0);
+            if(myTransform.position.x <= 18)
+            {
+                myTransform.position += new Vector3(speed* 1f,0,0);
+            }
+            
         }
 
-        if((Input.GetKey(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)) && Time.time > nextShot)
+        if(fullmovement)
+        {
+            if(Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                myTransform.position += new Vector3(0,speed*-1f,0);
+            }
+            if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+            {
+                myTransform.position += new Vector3(0,speed*1f,0);
+            }
+        }
+
+        if((Input.GetKey(KeyCode.Space) || Input.GetMouseButton(0)) && Time.time > nextShot)
         {
             nextShot =  Time.time + fireRate;
             fire();
@@ -41,6 +63,8 @@ public class PlayerScript : MonoBehaviour
     {
         if(col.gameObject.tag == "EnemyBullet")
         {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            Invoke("ResetColor", 0.2f);
             health -= 30;
         }
 
@@ -51,7 +75,6 @@ public class PlayerScript : MonoBehaviour
         
         if(health <= 0)
         {
-
             Destroy(gameObject);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
@@ -62,5 +85,16 @@ public class PlayerScript : MonoBehaviour
         float bpX = myTransform.position.x;
         bulletPos = new Vector2(bpX,bpY);
         Instantiate(bullet, bulletPos, Quaternion.identity);
+    }
+
+    void ResetColor()
+    {
+        gameObject.GetComponent<SpriteRenderer>().color = OGcolor;
+    }
+
+    void FullMovement()
+    {
+        fullmovement = true;
+        fireRate = 0.15f;
     }
 }

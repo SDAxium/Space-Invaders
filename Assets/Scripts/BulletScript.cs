@@ -21,11 +21,16 @@ public class BulletScript : MonoBehaviour
             Destroy(gameObject);
         }
         rb.velocity = new Vector2(0, velY);
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 1f);
     }
 
     void OnCollisionEnter2D(Collision2D col)
     {
         Destroy(gameObject);
+    }
+
+    void setSpeed(int val)
+    {
+        velY = val;
     }
 }

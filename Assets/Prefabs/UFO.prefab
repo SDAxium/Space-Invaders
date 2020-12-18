@@ -118,14 +118,14 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8942645973198601235}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -143,7 +143,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a1a44d63e0df27478d7396b0a28326b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blue: {fileID: 8729999477051985973, guid: 67d07d47a6c3c3e4798229293b8b054c, type: 3}
+  currentState: {r: 0, g: 0, b: 0, a: 0}
+  start: {r: 0.3890726, g: 0.25490198, b: 0.45490196, a: 1}
+  suicide: {r: 0.23139909, g: 0.44386798, b: 0.754717, a: 1}
+  multishot: {r: 0.929, g: 0.4852329, b: 0.154, a: 1}
+  tracking: {r: 0.90150905, g: 0.936, b: 0.14391243, a: 1}
+  shield: {r: 0.908, g: 0.121, b: 0.957, a: 1}
+  cancer: {r: 0, g: 0.631, b: 0, a: 1}
+  enraged: {r: 0.922, g: 0, b: 0, a: 1}
   myTransform: {fileID: 8942645973198601239}
-  health: 3000
+  maxHealth: 5000
+  currentHealth: 0
+  cooldown: 5
   speed: 1
-  bullet: {fileID: 4473620668213321132, guid: b160fb2134218cf4997fd448616bb4df, type: 3}
+  bullet: {fileID: 1187045364043719732, guid: 66ce096d514d4fc4e96bac225fecb92c, type: 3}
+  leftBullet: {fileID: 8459193381151135012, guid: 99bc319c9ad00024b8ff0b7e82cb9f7f,
+    type: 3}
+  rightBullet: {fileID: 1743334384812577841, guid: ae9a7e0d57162fe418eb69a8a7c5f06c,
+    type: 3}

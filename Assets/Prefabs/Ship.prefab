@@ -96,10 +96,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28d48b34c3e12b4f9730f2f368d1a54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OGcolor: {r: 1, g: 1, b: 1, a: 1}
   myTransform: {fileID: 2094945086484949341}
   bullet: {fileID: 4473620668213321132, guid: b160fb2134218cf4997fd448616bb4df, type: 3}
   health: 400
-  fireRate: 0.25
+  fireRate: 0.2
 --- !u!61 &2913884750252858104
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -140,10 +141,10 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 6
+  m_CollisionDetection: 1
+  m_Constraints: 7
